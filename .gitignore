@@ -1,0 +1,8 @@
+# Fichiers à ne JAMAIS pousser ici (secrets vendeur) :
+*.b64
+signing-*
+build-secrets.ps1
+*.jks
+*.p12
+licenses.json
+key-*.txt
