@@ -1,6 +1,6 @@
 # NetProtect — Note de confidentialité
 
-*Version 1.1 — application Android NetProtect v2.3*
+*Version 1.2 — application Android NetProtect v2.4*
 
 ## Ce que fait NetProtect
 
