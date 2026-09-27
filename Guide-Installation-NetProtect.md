@@ -6,13 +6,13 @@ Il bloque les sites adultes, le porno, les moteurs de recherche non sûrs et les
 ## 1. Ce qu'il faut
 
 - Un téléphone **Android 8 minimum** (Android 11+ recommandé).
-- Le fichier `NetProtectMobile-v2.4.apk`.
-- Votre **clé d'activation** (reçue par e-mail après l'achat, format `CMD-XXXXX:signature`).
+- Le fichier `NetProtectMobile-v2.5.apk`.
+- Votre **clé d'activation** (envoyée après l'achat par e-mail ou WhatsApp, format `CMD-XXXXX:signature`).
 
 ## 2. Installer l'APK
 
 1. Ouvrez **Paramètres → Sécurité** et activez « Installer des applications inconnues » pour votre navigateur ou votre gestionnaire de fichiers.
-2. Ouvrez le fichier `NetProtectMobile-v2.4.apk` reçu, puis **Installer**.
+2. Ouvrez le fichier `NetProtectMobile-v2.5.apk` reçu, puis **Installer**.
 3. Lancez l'application.
 
 > Android peut afficher « Application inconnue » : c'est normal, confirmez l'installation. Ce n'est **pas** une app du Play Store : vous l'installez en direct, aucune donnée ne passe par un magasin d'application.
@@ -58,7 +58,8 @@ Ouvrez le **Navigateur protégé** (accès rapide) et essayez un site connu : un
 
 ## 8. En cas de question
 
-- **Clé perdue** : votre clé est liée à votre commande ; elle se retrouve dans votre e-mail d'achat.
+- **Clé perdue** : votre clé est liée à votre commande ; elle se retrouve dans le message d'achat
+  (e-mail ou WhatsApp).
 - **Changement de téléphone** : contactez le vendeur avec votre numéro de commande pour
   autoriser la clé sur le nouveau téléphone.
 - **Une clé ne peut pas être utilisée sur deux téléphones en même temps** : c'est un choix

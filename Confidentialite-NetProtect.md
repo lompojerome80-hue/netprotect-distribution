@@ -1,6 +1,6 @@
 # NetProtect — Note de confidentialité
 
-*Version 1.2 — application Android NetProtect v2.4*
+*Version 1.3 — application Android NetProtect v2.5*
 
 ## Ce que fait NetProtect
 
@@ -33,3 +33,14 @@
 - Vous pouvez à tout moment désinstaller l'application : toutes ses données (règles,
   statistiques, mot de passe, licence) sont supprimées.
 - Pour toute question : contactez le vendeur à partir de votre e-mail de commande.
+
+## Ce que le vendeur voit, et où
+
+- Le vendeur ne voit **que trois choses** liées à votre licence : votre **numéro de commande**,
+  une **empreinte technique** de votre téléphone (non réversible, sert à bloquer le partage de la
+  clé) et la **date d'activation**. Ni votre nom, ni votre e-mail, ni votre numéro de téléphone,
+  ni aucun site que vous visitaz.
+- Ces trois informations sont stockées sur des serveurs situés **aux États-Unis** (hébergeur du
+  service de licence). Elles ne sont ni revendues, ni utilisées à des fins publicitaires.
+- Vous pouvez demander la **suppression de votre licence** (contactez le vendeur avec votre numéro
+  de commande) : la ligne correspondante est alors effacée du serveur.
