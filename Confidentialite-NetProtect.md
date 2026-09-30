@@ -19,7 +19,7 @@
 - Le chiffrement de la liste et l'obfuscation du code (v2.9) servent à **empêcher la lecture
   facile** de l'application par un tiers non laboratories. Ce n'est pas un secret industriel :
   la clé de déchiffrement est dans l'application, comme toute clé embarquée. Un informaticien
-  expérimenté pourrait donc l'extraire. L application's sécurité réelle repose sur la
+  expérimenté pourrait donc l'extraire. L’application sécurité réelle repose sur la
   **signature** du fichier : Android refuse d'installer une version modifiée.
 - Aucun de ces mécanismes n'envoie quoi que ce soit sur Internet ni ne touche à votre vie privée.
 
