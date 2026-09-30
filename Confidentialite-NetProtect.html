@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"/>
+<title>NetProtect - Note de confidentialite v2.9</title>
+<style>
+  body { margin:0; background:#eef1f5; font-family:'Segoe UI', Arial, sans-serif; }
+  .sheet { width:900px; margin:0 auto; background:#ffffff; }
+  .content { padding:26px 48px 60px 48px; font-size:15px; line-height:1.55; color:#1c2733; }
+  h1 { font-size:26px; color:#0b2a4a; margin:0 0 18px 0; border-bottom:3px solid #f0a11b; padding-bottom:10px; }
+  h2 { font-size:19px; color:#0b2a4a; margin:28px 0 10px 0; }
+  h3 { font-size:16px; color:#0b2a4a; margin:22px 0 8px 0; }
+  p  { margin:8px 0; }
+  ul, ol { margin:8px 0; padding-left:26px; }
+  li { margin:5px 0; }
+  blockquote { background:#fff7e6; border-left:4px solid #f0a11b; margin:12px 0; padding:10px 16px; }
+  blockquote p { margin:4px 0; }
+  code { background:#eef2f6; padding:2px 6px; border-radius:4px; font-family:Consolas, monospace; font-size:13px; }
+  figure { margin:16px auto; text-align:center; }
+  figure img { max-width:100%; border:1px solid #d5dce3; border-radius:6px; }
+  figcaption { font-size:12.5px; color:#5a6a7a; margin-top:6px; }
+  hr { border:0; border-top:1px solid #d5dce3; margin:22px 0; }
+  strong { color:#0b2a4a; }
+</style></head><body><div class="sheet"><div class="content">
+<h1>NetProtect — Note de confidentialité</h1>
+<p><em>Version 1.5 — application Android NetProtect v2.9</em></p>
+<h2>Ce que fait NetProtect</h2>
+<ul>
+<li>NetProtect installe un <strong>VPN local</strong> sur votre téléphone pour filtrer le trafic Internet
+  (blocage des sites adultes, des recherches sensibles et des DNS chiffrés). Le VPN ne « sort »
+  pas vers un serveur tiers : le trafic est analysé <strong>sur votre appareil</strong> puis renvoyé vers Internet.</li>
+<li>Le <strong>filtre de recherche</strong> (introduit en v2.7) compare le texte des recherches saisies dans le
+  navigateur intégré à une liste de mots-clés <strong>incluse dans l'application</strong>. Cette liste ne peut
+  être ni mise à jour depuis Internet, ni envoyée ailleurs, et la comparaison se fait
+  intégralement sur votre téléphone.</li>
+<li>La <strong>liste des sites adultes</strong> embarquée (depuis v2.9) est stockée <strong>compressée et chiffrée</strong> :
+  elle n'est plus lisible en ouvrant simplement le fichier de l'application.</li>
+</ul>
+<h2>Ce que la protection ne cache pas (honnêteté)</h2>
+<ul>
+<li>Le chiffrement de la liste et l'obfuscation du code (v2.9) servent à <strong>empêcher la lecture
+  facile</strong> de l'application par un tiers non laboratories. Ce n'est pas un secret industriel :
+  la clé de déchiffrement est dans l'application, comme toute clé embarquée. Un informaticien
+  expérimenté pourrait donc l'extraire. L’application sécurité réelle repose sur la
+  <strong>signature</strong> du fichier : Android refuse d'installer une version modifiée.</li>
+<li>Aucun de ces mécanismes n'envoie quoi que ce soit sur Internet ni ne touche à votre vie privée.</li>
+</ul>
+<h2>Données collectées</h2>
+<ul>
+<li><strong>Aucune donnée personnelle n'est collectée</strong> : pas de compte, pas de publicité,
+  pas d'analytique, pas de tracking, pas de collecte de votre navigation.</li>
+<li>Les statistiques affichées (sites bloqués, requêtes analysées) restent <strong>sur votre appareil</strong>.</li>
+<li>L'application ne communique avec un serveur que dans deux cas :
+  1. <strong>L'activation de votre licence</strong> (une seule fois, au premier lancement) : elle envoie
+     un <strong>identifiant technique de votre téléphone</strong> (empreinte d'appareil) et votre clé,
+     uniquement pour lier la clé à ce téléphone. Rien d'autre n'est transmis.
+  2. Le <strong>téléchargement des domaines adultes</strong> (serveur de règles) : aucune information
+     sur votre navigation, seulement l'heure et votre adresse IP publique (comme n'importe
+     quelle visite de site).</li>
+</ul>
+<h2>Mot de passe et licence</h2>
+<ul>
+<li>Votre mot de passe de protection est stocké localement sous forme <strong>hachée</strong> (PBKDF2,
+  sel aléatoire) : ni le vendeur ni un tiers ne peut le lire.</li>
+<li>Votre <strong>clé d'activation</strong> est vérifiée sur l'appareil (signature RSA hors ligne) :
+  elle n'est jamais transmise.</li>
+</ul>
+<h2>Vos droits</h2>
+<ul>
+<li>Vous pouvez à tout moment désinstaller l'application : toutes ses données (règles,
+  statistiques, mot de passe, licence) sont supprimées.</li>
+<li>Pour toute question : contactez le vendeur à partir de votre e-mail de commande.</li>
+</ul>
+<h2>Ce que le vendeur voit, et où</h2>
+<ul>
+<li>Le vendeur ne voit <strong>que trois choses</strong> liées à votre licence : votre <strong>numéro de commande</strong>,
+  une <strong>empreinte technique</strong> de votre téléphone (non réversible, sert à bloquer le partage de la
+  clé) et la <strong>date d'activation</strong>. Ni votre nom, ni votre e-mail, ni votre numéro de téléphone,
+   ni aucun site que vous visitez.</li>
+<li>Ces trois informations sont stockées sur des serveurs situés <strong>aux États-Unis</strong> (hébergeur du
+  service de licence). Elles ne sont ni revendues, ni utilisées à des fins publicitaires.</li>
+<li>Vous pouvez demander la <strong>suppression de votre licence</strong> (contactez le vendeur avec votre numéro
+  de commande) : la ligne correspondante est alors effacée du serveur.</li>
+</ul>
+</div></div></body></html>
