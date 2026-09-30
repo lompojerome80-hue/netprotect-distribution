@@ -1,16 +1,27 @@
 # NetProtect — Note de confidentialité
 
-*Version 1.4 — application Android NetProtect v2.7*
+*Version 1.5 — application Android NetProtect v2.9*
 
 ## Ce que fait NetProtect
 
 - NetProtect installe un **VPN local** sur votre téléphone pour filtrer le trafic Internet
   (blocage des sites adultes, des recherches sensibles et des DNS chiffrés). Le VPN ne « sort »
   pas vers un serveur tiers : le trafic est analysé **sur votre appareil** puis renvoyé vers Internet.
-- Le **filtre de recherche** (nouveauté v2.7) compare le texte des recherches saisies dans le
+- Le **filtre de recherche** (introduit en v2.7) compare le texte des recherches saisies dans le
   navigateur intégré à une liste de mots-clés **incluse dans l'application**. Cette liste ne peut
   être ni mise à jour depuis Internet, ni envoyée ailleurs, et la comparaison se fait
   intégralement sur votre téléphone.
+- La **liste des sites adultes** embarquée (depuis v2.9) est stockée **compressée et chiffrée** :
+  elle n'est plus lisible en ouvrant simplement le fichier de l'application.
+
+## Ce que la protection ne cache pas (honnêteté)
+
+- Le chiffrement de la liste et l'obfuscation du code (v2.9) servent à **empêcher la lecture
+  facile** de l'application par un tiers non laboratories. Ce n'est pas un secret industriel :
+  la clé de déchiffrement est dans l'application, comme toute clé embarquée. Un informaticien
+  expérimenté pourrait donc l'extraire. L application's sécurité réelle repose sur la
+  **signature** du fichier : Android refuse d'installer une version modifiée.
+- Aucun de ces mécanismes n'envoie quoi que ce soit sur Internet ni ne touche à votre vie privée.
 
 ## Données collectées
 

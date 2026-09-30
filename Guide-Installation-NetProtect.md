@@ -7,13 +7,13 @@ de recherche sensibles et les DNS chiffrés.
 ## 1. Ce qu'il faut
 
 - Un téléphone **Android 8 minimum** (Android 11+ recommandé).
-- Le fichier `NetProtectMobile-v2.7.apk`.
+- Le fichier `NetProtectMobile-v2.9.apk`.
 - Votre **clé d'activation** (envoyée après l'achat par e-mail ou WhatsApp, format `CMD-XXXXX:signature`).
 
 ## 2. Installer l'APK
 
 1. Ouvrez **Paramètres → Sécurité** et activez « Installer des applications inconnues » pour votre navigateur ou votre gestionnaire de fichiers.
-2. Ouvrez le fichier `NetProtectMobile-v2.7.apk` reçu, puis **Installer**.
+2. Ouvrez le fichier `NetProtectMobile-v2.9.apk` reçu, puis **Installer**.
 3. Lancez l'application.
 
 > Android peut afficher « Application inconnue » : c'est normal, confirmez l'installation. Ce n'est **pas** une app du Play Store : vous l'installez en direct, aucune donnée ne passe par un magasin d'application.
@@ -93,7 +93,7 @@ y compris en navigation privée dans ce navigateur.
 
 ### Une recherche bloquée
 
-**(exclusivité v2.7)** — Dans le Navigateur protégé, une recherche contenant un mot-clé
+**(depuis v2.7)** — Dans le Navigateur protégé, une recherche contenant un mot-clé
 explicite est bloquée, avec les mots détectés affichés à l'écran.
 Un terme ambigu seul ne bloque rien : il faut qu'il soit **combiné avec un autre**.
 
