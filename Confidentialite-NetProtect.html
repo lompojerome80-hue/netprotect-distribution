@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8"/>
-<title>NetProtect - Note de confidentialite v2.9</title>
+<title>NetProtect - Note de confidentialite v2.12</title>
 <style>
   body { margin:0; background:#eef1f5; font-family:'Segoe UI', Arial, sans-serif; }
   .sheet { width:900px; margin:0 auto; background:#ffffff; }
+  .brand { background:#0b2a4a; color:#fff; padding:26px 48px; }
+  .brand .sub { font-size:15px; color:#9fc0e0; margin-top:4px; }
   .content { padding:26px 48px 60px 48px; font-size:15px; line-height:1.55; color:#1c2733; }
   h1 { font-size:26px; color:#0b2a4a; margin:0 0 18px 0; border-bottom:3px solid #f0a11b; padding-bottom:10px; }
   h2 { font-size:19px; color:#0b2a4a; margin:28px 0 10px 0; }
@@ -21,63 +23,63 @@
   strong { color:#0b2a4a; }
 </style></head><body><div class="sheet"><div class="content">
 <h1>NetProtect — Note de confidentialité</h1>
-<p><em>Version 1.5 — application Android NetProtect v2.9</em></p>
+<p><em>Version 2.0 — application Android NetProtect v2.12</em> <em>Remplace la version 1.5 (qui décrivait la v2.9 et contenait une erreur sur la transmission de la clé de licence).</em></p>
+<h2>En une phrase</h2>
+<p>NetProtect filtre tout sur votre téléphone. Il n'existe <strong>aucun serveur de surveillance</strong> : ni votre navigation, ni vos recherches, ni les sites bloqués ne quittent votre appareil.</p>
 <h2>Ce que fait NetProtect</h2>
 <ul>
-<li>NetProtect installe un <strong>VPN local</strong> sur votre téléphone pour filtrer le trafic Internet
-  (blocage des sites adultes, des recherches sensibles et des DNS chiffrés). Le VPN ne « sort »
-  pas vers un serveur tiers : le trafic est analysé <strong>sur votre appareil</strong> puis renvoyé vers Internet.</li>
-<li>Le <strong>filtre de recherche</strong> (introduit en v2.7) compare le texte des recherches saisies dans le
-  navigateur intégré à une liste de mots-clés <strong>incluse dans l'application</strong>. Cette liste ne peut
-  être ni mise à jour depuis Internet, ni envoyée ailleurs, et la comparaison se fait
-  intégralement sur votre téléphone.</li>
-<li>La <strong>liste des sites adultes</strong> embarquée (depuis v2.9) est stockée <strong>compressée et chiffrée</strong> :
-  elle n'est plus lisible en ouvrant simplement le fichier de l'application.</li>
+<li><p>NetProtect installe un <strong>VPN local</strong> sur votre téléphone pour filtrer le trafic Internet (blocage des sites adultes, des recherches sensibles et des DNS chiffrés). Le VPN ne « sort » pas vers un serveur tiers : le trafic est analysé <strong>sur votre appareil</strong> puis renvoyé vers Internet.</p></li>
+<li><p>Le <strong>filtre de recherche</strong> compare le texte des recherches saisies dans le navigateur intégré à une liste de mots-clés <strong>incluse dans l'application</strong>. La comparaison se fait intégralement sur votre téléphone.</p></li>
+<li><p>La <strong>liste des sites adultes</strong> embarquée est stockée <strong>compressée et chiffrée</strong> (AES), puis contrôlée par une empreinte HMAC-SHA256 avant usage : elle n'est pas lisible en ouvrant simplement le fichier de l'application.</p></li>
 </ul>
 <h2>Ce que la protection ne cache pas (honnêteté)</h2>
 <ul>
-<li>Le chiffrement de la liste et l'obfuscation du code (v2.9) servent à <strong>empêcher la lecture
-  facile</strong> de l'application par un tiers non laboratories. Ce n'est pas un secret industriel :
-  la clé de déchiffrement est dans l'application, comme toute clé embarquée. Un informaticien
-  expérimenté pourrait donc l'extraire. L’application sécurité réelle repose sur la
-  <strong>signature</strong> du fichier : Android refuse d'installer une version modifiée.</li>
-<li>Aucun de ces mécanismes n'envoie quoi que ce soit sur Internet ni ne touche à votre vie privée.</li>
+<li><p>Le chiffrement de la liste sert à <strong>empêcher la lecture facile</strong> de l'application par un tiers non laborieux. Ce n'est pas un secret industriel : la clé de déchiffrement est dans l'application, comme toute clé embarquée. Un informaticien expérimenté pourrait donc l'extraire.</p></li>
+<li><p><strong>L'intégrité réelle repose sur la signature du fichier</strong> : Android refuse d'installer une version modifiée, et l'empreinte du certificat est publiée sur le site pour que vous puissiez vérifier le fichier que vous avez téléchargé.</p></li>
+<li><p><strong>La liste de règles téléchargée n'est pas signée.</strong> Son adresse est obligatoirement en HTTPS, un fichier de moins de 20 000 domaines est refusé, et la fusion avec vos règles est <strong>strictement additive</strong>. Une source compromise peut donc ajouter des blocages à tort, mais <strong>ne peut pas désobloquer</strong> un site que vous aviez bloqué. C'est une limite réelle, que nous préférons indiquer plutôt que masquer.</p></li>
+<li><p>Aucun de ces mécanismes n'envoie quoi que ce soit sur Internet ni ne touche à votre vie privée.</p></li>
 </ul>
 <h2>Données collectées</h2>
 <ul>
-<li><strong>Aucune donnée personnelle n'est collectée</strong> : pas de compte, pas de publicité,
-  pas d'analytique, pas de tracking, pas de collecte de votre navigation.</li>
-<li>Les statistiques affichées (sites bloqués, requêtes analysées) restent <strong>sur votre appareil</strong>.</li>
-<li>L'application ne communique avec un serveur que dans deux cas :
-  1. <strong>L'activation de votre licence</strong> (une seule fois, au premier lancement) : elle envoie
-     un <strong>identifiant technique de votre téléphone</strong> (empreinte d'appareil) et votre clé,
-     uniquement pour lier la clé à ce téléphone. Rien d'autre n'est transmis.
-  2. Le <strong>téléchargement des domaines adultes</strong> (serveur de règles) : aucune information
-     sur votre navigation, seulement l'heure et votre adresse IP publique (comme n'importe
-     quelle visite de site).</li>
+<li><p><strong>Aucune donnée personnelle n'est collectée</strong> : pas de compte, pas de publicité, pas d'analytique, pas de tracking, pas de collecte de votre navigation.</p></li>
+<li><p>Les statistiques affichées (sites bloqués, requêtes analysées) restent <strong>sur votre appareil</strong>.</p></li>
+<li><p><strong>Aucun envoi n'est déclenché automatiquement.</strong> Aucune donnée vous concernant ne part sans que vous le déclenchiez vous-même.</p></li>
+<li><p>L'application communique avec un serveur dans deux cas, et seulement deux :</p>
+<ol>
+<li><p><strong>L'activation de votre licence</strong> (une seule fois, quand vous saisissez votre code). Sont transmis <strong>exactement trois éléments</strong> : l'identifiant de la commande, la signature RSA qui accompagne le code, et l'identifiant Android de l'appareil (<code>ANDROID_ID</code>). Rien d'autre.</p>
+<p>La signature est <strong>vérifiée sur l'appareil avant tout appel réseau</strong> : un code falsifié n'est jamais transmis. L'envoi se fait en HTTPS. Il sert uniquement à attacher la licence à cet appareil et à empêcher sa revente. Comme pour tout appel réseau, votre adresse IP publique est visible du serveur au moment de cet envoi.</p></li>
+<li><p><strong>Le téléchargement de la liste de règles.</strong> C'est un téléchargement, pas un envoi : aucun élément de votre navigation n'est transmis. L'application vérifie au plus <strong>une fois toutes les 24 heures</strong>, uniquement au moment où vous activez la protection, et seulement si la liste a pu changer. L'adresse de la source est affichée dans l'écran « Règles » de l'application, ce qui vous permet de vérifier par vous-même d'où elle vient.</p>
+<p>Par défaut, la liste provient d'un <strong>dépôt GitHub public</strong> (projet StevenBlack/hosts), et non d'un serveur du vendeur. Votre adresse IP publique est visible de la source qui sert le fichier, comme pour n'importe quel téléchargement.</p></li>
+</ol></li>
+</ul>
+<h2>Moteurs de recherche</h2>
+<ul>
+<li><p>Une recherche lancée depuis le navigateur intégré passe par <strong>Google, Bing ou DuckDuckGo</strong>, selon le moteur choisi. Chaque moteur applique sa propre politique de confidentialité ; NetProtect n'y participe pas et n'en reçoit rien. Le filtre ne fait que bloquer la requête au moment où elle va partir, une fois le mot-clé comparé <strong>localement</strong>.</p></li>
 </ul>
 <h2>Mot de passe et licence</h2>
 <ul>
-<li>Votre mot de passe de protection est stocké localement sous forme <strong>hachée</strong> (PBKDF2,
-  sel aléatoire) : ni le vendeur ni un tiers ne peut le lire.</li>
-<li>Votre <strong>clé d'activation</strong> est vérifiée sur l'appareil (signature RSA hors ligne) :
-  elle n'est jamais transmise.</li>
-</ul>
-<h2>Vos droits</h2>
-<ul>
-<li>Vous pouvez à tout moment désinstaller l'application : toutes ses données (règles,
-  statistiques, mot de passe, licence) sont supprimées.</li>
-<li>Pour toute question : contactez le vendeur à partir de votre e-mail de commande.</li>
+<li><p>Votre mot de passe de protection n'est <strong>jamais stocké en clair</strong> : il est haché localement avec <strong>PBKDF2-HMAC-SHA256, 200 000 itérations et un sel aléatoire de 16 octets</strong>. Ni le vendeur ni un tiers ne peut le lire.</p></li>
+<li><p>Votre <strong>clé d'activation</strong> a la forme <code>identifiant:signature</code>. Sa signature RSA est vérifiée hors ligne sur l'appareil. Correction par rapport à la version 1.5 de cette note : l'identifiant et la signature <strong>sont transmis</strong> au serveur de licence lors de l'activation, afin d'y attacher la licence. Ce qui n'est jamais transmis, c'est votre navigation et votre mot de passe.</p></li>
 </ul>
 <h2>Ce que le vendeur voit, et où</h2>
 <ul>
-<li>Le vendeur ne voit <strong>que trois choses</strong> liées à votre licence : votre <strong>numéro de commande</strong>,
-  une <strong>empreinte technique</strong> de votre téléphone (non réversible, sert à bloquer le partage de la
-  clé) et la <strong>date d'activation</strong>. Ni votre nom, ni votre e-mail, ni votre numéro de téléphone,
-   ni aucun site que vous visitez.</li>
-<li>Ces trois informations sont stockées sur des serveurs situés <strong>aux États-Unis</strong> (hébergeur du
-  service de licence). Elles ne sont ni revendues, ni utilisées à des fins publicitaires.</li>
-<li>Vous pouvez demander la <strong>suppression de votre licence</strong> (contactez le vendeur avec votre numéro
-  de commande) : la ligne correspondante est alors effacée du serveur.</li>
+<li><p>Concernant <strong>votre licence</strong>, le serveur de licence enregistre trois éléments : l'identifiant de commande, l'identifiant Android de l'appareil (<code>ANDROID_ID</code>), et la date d'activation. Ni votre nom, ni votre e-mail, ni votre numéro de téléphone, ni aucun site que vous ne visitez.</p></li>
+<li><p><strong>Ce que le vendeur sait par ailleurs, parce que vous l'avez contacté :</strong> pour vous remettre la clé, vous avez utilisé le canal de commande, donc le vendeur dispose au minimum du numéro ou de l'adresse que vous avez communiqué. C'est inhérent à toute vente à distance, et cela n'est pas collecté par l'application.</p></li>
+<li><p>Ces éléments sont stockés sur des serveurs situés <strong>aux États-Unis</strong> (hébergeur du service de licence). Ils ne sont ni revendus, ni utilisés à des fins publicitaires.</p></li>
+<li><p><strong>Aucune archive, aucun export, aucune sauvegarde</strong> de votre navigation n'existe, parce que rien de tel n'est collecté.</p></li>
+</ul>
+<h2>Vos droits</h2>
+<ul>
+<li><p><strong>Désinstallation</strong> : vous pouvez désinstaller l'application à tout moment. Toutes ses données locales (règles, statistiques, mot de passe, licence) sont supprimées.</p></li>
+<li><p><strong>Libération de licence</strong> : si vous revendez votre téléphone, demandez la libération de votre licence avec votre identifiant de commande. Le rattachement licence / appareil est supprimé et la licence redevient utilisable sur un autre appareil.</p></li>
+<li><p><strong>Droit d'accès</strong> : les données traitées sont exactement les trois listées ci-dessus ; il n'y en a pas d'autres.</p></li>
+<li><p><strong>Droit d'opposition et retrait</strong> : le seul traitement indispensable au fonctionnement du service est l'activation de la licence. Le téléchargement de la liste de règles peut être neutralisé en pointant l'adresse de la source vers une liste locale, ou en ne jamais déclenchant la protection depuis un réseau non maîtrisé.</p></li>
+<li><p>Conformément à la <strong>loi n° 001-2021/AN du 30 mars 2021</strong> portant protection des personnes à l'égard du traitement des données à caractère personnel, vous pouvez aussi introduire une réclamation auprès de l'autorité de contrôle burkinabè compétente.</p></li>
+<li><p>Pour toute demande : contactez le vendeur par le canal de commande utilisé lors de l'achat.</p></li>
+</ul>
+<h2>Sécurité réseau</h2>
+<ul>
+<li><p>Depuis la <strong>v2.12</strong>, l'application <strong>refuse tout trafic non chiffré</strong> : sur un réseau hostile (Wi-Fi de motel, de café, d'aéroport), aucune requête en clair ne peut partir, et le contenu du trafic chiffré ne peut être ni lu ni modifié en transparence.</p></li>
+<li><p>Cela ne remplace pas un mot de passe distinct par compte, et ne protège pas contre un appareil auquel quelqu'un a installé un certificat d'autorité.</p></li>
 </ul>
 </div></div></body></html>

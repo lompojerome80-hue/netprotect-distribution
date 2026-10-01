@@ -7,22 +7,27 @@ de recherche sensibles et les DNS chiffrés.
 ## 1. Ce qu'il faut
 
 - Un téléphone **Android 8 minimum** (Android 11+ recommandé).
-- Le fichier `NetProtectMobile-v2.9.apk`.
+- Le fichier `NetProtectMobile-v2.12.apk`.
 - Votre **clé d'activation** (envoyée après l'achat par e-mail ou WhatsApp, format `CMD-XXXXX:signature`).
 
 ## 2. Installer l'APK
 
 1. Ouvrez **Paramètres → Sécurité** et activez « Installer des applications inconnues » pour votre navigateur ou votre gestionnaire de fichiers.
-2. Ouvrez le fichier `NetProtectMobile-v2.9.apk` reçu, puis **Installer**.
+2. Ouvrez le fichier `NetProtectMobile-v2.12.apk` reçu, puis **Installer**.
 3. Lancez l'application.
 
+> **Vérifiez le fichier que vous avez reçu.** L'empreinte SHA-256 du fichier `NetProtectMobile-v2.12.apk` est
+> publiée sur le site de vente. Sous Windows, ouvrez PowerShell dans le dossier du fichier puis saisissez
+> `Get-FileHash .\NetProtectMobile-v2.12.apk -Algorithm SHA256` : la suite affichée doit correspondre exactement.
+> Un fichier modifié est refusé à l'installation par Android.
+>
 > Android peut afficher « Application inconnue » : c'est normal, confirmez l'installation. Ce n'est **pas** une app du Play Store : vous l'installez en direct, aucune donnée ne passe par un magasin d'application.
 
 ## 3. ⭐ Android 13, 14 et 15 : l'étape à ne pas manquer
 
 Sur les téléphones **Android 13 et plus récents**, Android bloque par défaut l'autorisation VPN des
 applications installées hors du Play Store. Sans une manipulation de plus, l'application affiche
-« protection inactive » et vous-TOUT internet passe : **ce n'est pas un bug, c'est Android qui l'exige.**
+« protection inactive » et tout Internet passe : **ce n'est pas un bug, c'est Android qui l'exige.**
 
 **Ce que vous verrez :** vous appuyez sur « ACTIVER LA PROTECTION », rien ne se passe, aucune fenêtre
 d'autorisation n'apparaît. L'application vous affiche alors un message **« Android doit autoriser
@@ -44,6 +49,8 @@ Collez votre clé (ou saisissez-la telle quelle) puis appuyez sur **ACTIVER**.
 - La clé est unique et liée à votre commande **et à votre téléphone**.
 - Une connexion Internet est nécessaire **au moment de l'activation** (une seule fois).
 - Après activation, l'application reste active sur ce téléphone **sans nouvelle connexion**.
+- Depuis la **v2.12**, cette connexion d'activation doit être **chiffrée (HTTPS)** : sur un Wi-Fi
+  non protégé, l'activation est refusée plutôt que d'envoyer votre code en clair.
 - **Changement de téléphone** : contactez le vendeur avec votre numéro de commande :
   il autorisera la clé sur votre nouveau téléphone.
 
@@ -125,3 +132,34 @@ Ouvrez le **Navigateur protégé** (accès rapide) et essayez un site connu : un
   c'est le réglage manquant d'Android 13+.
 - **Une recherche est bloquée alors qu'elle ne l'aurait pas dû** : le filtre bloque dès qu'un mot-clé
   explicite apparaît. Videz la barre de recherche et retapez.
+
+## 11. Sécurité réseau et liste des règles (v2.12)
+
+Depuis la **v2.12**, l'application **refuse tout trafic non chiffré** :
+
+- l'activation de la licence passe uniquement par une connexion **HTTPS** ;
+- la liste des règles n'est téléchargée qu'en **HTTPS** ;
+- aucune requête en clair n'est acceptée par le filtre.
+
+> Conséquence à connaître : certains sites anciens qui ne gèrent que du HTTP peuvent ne plus
+> s'ouvrir. C'est le comportement attendu et voulu : sur un Wi-Fi de motel, de café ou
+> d'aéroport, ce trafic était justement intercepçable par le tiers le plus proche de vous.
+
+### La liste des règles se met à jour toute seule
+
+- Au plus **une fois toutes les 24 heures**, et uniquement au moment où vous activez la protection.
+- L'adresse de la source est affichée dans l'écran **Règles**. Par défaut, elle pointe vers un
+  dépôt **GitHub public** (projet StevenBlack/hosts), et non vers un serveur du vendeur.
+- Le fichier doit être en **HTTPS** et contenir au moins **20 000 domaines** : en dessous, il est refusé.
+- La fusion avec vos règles est **strictement additive** : une source compromise peut ajouter des
+  blocages à tort, mais **jamais désobloquer** un site que vous aviez bloqué.
+- Limite connue, assumée : cette liste téléchargée **n'est pas signée** numériquement. Le
+  détail est dans la note de confidentialité, section « Ce que la protection ne cache pas ».
+
+### Si vous soupçonnez un blocage en trop
+
+1. Ouvrez **Règles** et notez la source affichée en haut de l'écran.
+2. Vérifiez cette adresse dans un navigateur, sur le même téléphone.
+3. Ajoutez le domaine concerné directement dans la **liste blanche** de l'application : votre règle
+   locale est conservée et le blocage distant ne peut pas l'emporter.
+
